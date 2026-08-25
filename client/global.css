@@ -19,16 +19,16 @@
 .art-cover { z-index: 2; top: 118px; left: 50%; width: min(40vw, 500px); height: min(48vw, 600px); transform: translateX(-50%); object-fit: contain; }
 .hero-glow { position: absolute; z-index: 1; left: 50%; top: 30%; width: 420px; height: 420px; transform: translate(-50%, -50%); border-radius: 50%; background: #d72cff; opacity: .13; filter: blur(100px); }
 .intro-section { position: relative; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; min-height: 560px; margin: 0 auto; padding: 120px 7%; }
-.intro-copy { position: relative; z-index: 2; }
+.intro-copy { position: relative; z-index: 2; width: 42%; min-width: 0; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #eee; border-radius: 999px; padding: 5px 10px; font-size: 13px; letter-spacing: .08em; transition: background .2s; }
 .eyebrow:hover { background: #ffffff1c; }
 h1 { margin: 18px 0; font-size: clamp(42px, 5vw, 68px); line-height: .98; letter-spacing: -.06em; font-weight: 800; }
 .intro-copy p, .section-page p { max-width: 360px; color: #dedede; font-weight: 500; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; color: #f4b5ff; font-weight: 600; transition: gap .2s; }
 .text-link:hover { gap: 13px; }
-.creative-art { position: absolute; right: 0; top: 120px; width: 50%; max-width: 580px; height: 320px; border-radius: 50px; object-fit: cover; filter: brightness(.85) contrast(1.05); }
+.creative-art { position: absolute; right: 0; top: 120px; width: 48%; max-width: 580px; height: 320px; border-radius: 50px; object-fit: cover; filter: brightness(.85) contrast(1.05); }
 .section-page { min-height: calc(100vh - 338px); padding: 220px 8% 130px; }
 .section-page-inner { max-width: 650px; }
 .section-page h1 { font-size: clamp(64px, 11vw, 150px); color: #db2bff; }
 footer { min-height: 338px; }
-@media (max-width: 768px) { .hero-art { height: 650px; } .art-left, .art-right { top: 220px; width: 38vw; height: 52vw; } .art-left { left: -8%; } .art-right { right: -8%; } .art-cover { top: 145px; width: 68vw; height: 78vw; } .intro-section { display: block; min-height: 600px; padding: 80px 8%; } .creative-art { position: relative; top: auto; right: auto; width: 100%; height: 230px; margin-top: 65px; border-radius: 30px; } }
+@media (max-width: 768px) { .intro-copy { width: 100%; } .hero-art { height: 650px; } .art-left, .art-right { top: 220px; width: 38vw; height: 52vw; } .art-left { left: -8%; } .art-right { right: -8%; } .art-cover { top: 145px; width: 68vw; height: 78vw; } .intro-section { display: block; min-height: 600px; padding: 80px 8%; } .creative-art { position: relative; top: auto; right: auto; width: 100%; height: 230px; margin-top: 65px; border-radius: 30px; } }

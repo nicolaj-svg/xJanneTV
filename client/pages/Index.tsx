@@ -53,7 +53,7 @@ export default function Index() {
       <img src={artwork.cover} alt="xJanne cover art" className="art art-cover" />
       <div className="hero-glow" />
     </section>
-    <section className="intro-section"><div className="intro-copy"><Link to="/musik" className="eyebrow">WILLKOMMEN <ArrowUpRight size={14} /></Link><h1 className="flex flex-col items-start justify-start pr-[5px]">Musik,<br className="hidden md:block" /> Kunst, Streaming</h1><p>Willkommen auf der offiziellen Website von xJanne.</p><Link to="/projekte" className="text-link">Entdecke die Welt <ArrowUpRight size={17} /></Link></div><img src={artwork.creative} alt="Creative design artwork" className="creative-art" /></section>
+    <section className="intro-section"><div className="intro-copy"><a href="https://www.twitch.tv/xjannetv" target="_blank" rel="noreferrer" className="eyebrow">WILLKOMMEN <ArrowUpRight size={14} /></a><h1 className="flex flex-col items-start justify-start pr-[5px]">Musik,<br className="hidden md:block" /> Kunst, Streaming</h1><p>Willkommen auf der offiziellen Website von xJanne.</p><Link to="/projekte" className="text-link">Entdecke die Welt <ArrowUpRight size={17} /></Link></div><img src={artwork.creative} alt="Creative design artwork" className="creative-art" /></section>
   </main><Footer /></div>;
 }
 
