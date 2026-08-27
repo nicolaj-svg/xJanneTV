@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
 const artwork = {
@@ -13,7 +13,7 @@ const artwork = {
 
 const links = [
   ["Socials", "/socials"], ["Projekte", "/projekte"], ["Stream", "/stream"],
-  ["Kunst", "/kunst"], ["Musik", "/musik"], ["Arcanimals", "/arcanimals"],
+  ["Kunst", "/kunst"], ["Musik", "/musik"], ["Arcanimals", "/arcanimals"], ["Contact", "/contact"],
 ];
 
 function Nav({ onClose }: { onClose?: () => void }) {
@@ -55,6 +55,10 @@ export default function Index() {
     </section>
     <section className="intro-section"><div className="intro-copy"><a href="https://www.twitch.tv/xjannetv" target="_blank" rel="noreferrer" className="eyebrow">WILLKOMMEN <ArrowUpRight size={14} /></a><h1 className="flex flex-col items-start justify-start pr-[5px]">Musik,<br className="hidden md:block" /> Kunst, Streaming</h1><p>Willkommen auf der offiziellen Website von xJanne.</p><Link to="/projekte" className="text-link">Entdecke die Welt <ArrowUpRight size={17} /></Link></div><img src={artwork.creative} alt="Creative design artwork" className="creative-art" /></section>
   </main><Footer /></div>;
+}
+
+export function ContactPage() {
+  return <div className="site-shell"><Header /><main className="contact-page"><div className="contact-page-inner"><img src="https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2F3bdd9b522be04ea8aa28c3f63007e729?format=webp&width=800&height=1200" alt="Contact xJanne" className="contact-title-art" /><div className="contact-card"><div className="contact-icon"><MessageCircle size={30} /></div><div><span className="contact-label">COMMUNITY</span><h1>Discord</h1><p>Werde Teil der xJanne Community. Austausch, Updates und neue Projekte findest du auf Discord.</p></div><div className="contact-status"><span /> Invite-Link folgt</div></div></div></main><Footer /></div>;
 }
 
 export function SectionPage({ title, subtitle }: { title: string; subtitle: string }) {
