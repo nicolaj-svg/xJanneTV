@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
 const artwork = {
@@ -13,7 +13,7 @@ const artwork = {
 
 const links = [
   ["Socials", "/socials"], ["Projekte", "/projekte"], ["Stream", "/stream"],
-  ["Kunst", "/kunst"], ["Musik", "/musik"], ["Arcanimals", "/arcanimals"],
+  ["Kunst", "/kunst"], ["Musik", "/musik"], ["Arcanimals", "/arcanimals"], ["Contact", "/contact"],
 ];
 
 function Nav({ onClose }: { onClose?: () => void }) {
@@ -39,7 +39,7 @@ function Footer() {
     <div className="mx-auto flex h-full max-w-[1280px] flex-col justify-between md:relative">
       <div className="md:absolute md:left-0 md:top-16"><div className="text-2xl font-bold text-[#db2bff]">xJanne</div><div className="text-2xl text-[#7325ab]">Musik, Kunst, Streaming</div></div>
       <img src={artwork.mark} alt="xJanne star mark" className="mx-auto my-8 h-40 w-40 object-contain opacity-90 md:absolute md:left-1/2 md:top-0 md:my-0 md:-translate-x-1/2" />
-      <Link to="/contact" className="mx-auto rounded bg-[#200628] px-4 py-2 text-sm text-[#b8b0b0] transition hover:bg-[#35103e] md:absolute md:left-1/2 md:top-[212px] md:-translate-x-1/2">Contact</Link>
+      <div className="flex items-center gap-3 mx-auto md:absolute md:left-1/2 md:top-[212px] md:-translate-x-1/2"><Link to="/contact" className="rounded bg-[#200628] px-4 py-2 text-sm text-[#b8b0b0] transition hover:bg-[#35103e]">Contact</Link><Link to="/datenschutz" className="text-xs text-[#bfb8b8] underline transition hover:text-white">Datenschutz</Link></div>
       <div className="text-center text-xs text-[#bfb8b8] md:absolute md:bottom-0 md:left-0">© <a href="https://xjanne.com/" target="_blank" rel="noreferrer" className="underline">xJanne.com</a> <span className="mx-2">|</span> <a href="https://nicolaj.org/" target="_blank" rel="noreferrer" className="underline">Nicolaj.org</a> <span className="ml-2">All Rights Reserved</span></div>
     </div>
   </footer>;
@@ -57,6 +57,24 @@ export default function Index() {
   </main><Footer /></div>;
 }
 
+export function ContactPage() {
+  return <div className="site-shell"><Header /><main className="contact-page"><div className="contact-page-inner"><img src="https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2F3bdd9b522be04ea8aa28c3f63007e729?format=webp&width=800&height=1200" alt="Contact xJanne" className="contact-title-art" /><div className="contact-card"><div className="contact-icon"><MessageCircle size={30} /></div><div><span className="contact-label">COMMUNITY</span><h1>Discord</h1><p>Werde Teil der xJanne Community. Austausch, Updates und neue Projekte findest du auf Discord.</p></div><a className="contact-status" href="https://discord.gg/C8EvTUG7qR" target="_blank" rel="noreferrer"><span /> Discord beitreten <ArrowUpRight size={15} /></a></div><div className="contact-card contact-card-email"><div className="contact-icon"><span className="email-symbol">@</span></div><div><span className="contact-label">BUSINESS</span><h1>E-Mail</h1><p>Für geschäftliche Anfragen und Kooperationen erreichst du xJanne direkt.</p></div><a className="contact-status" href="mailto:jl.offiziell@gmail.com"><span /> E-Mail schreiben <ArrowUpRight size={15} /></a></div></div></main><Footer /></div>;
+}
+
+const sectionContent: Record<string, { image: string; label: string; links: { label: string; href: string; external?: boolean }[] }> = {
+  Socials: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2Faec16121e65a4908a9979850982e9fb7?format=webp&width=800&height=1200", label: "FOLGE XJANNE", links: [{ label: "Twitch", href: "https://www.twitch.tv/xjannetv", external: true }, { label: "YouTube", href: "https://www.youtube.com/@xjannetv", external: true }, { label: "Instagram", href: "https://www.instagram.com/xjannetv", external: true }, { label: "TikTok", href: "https://www.tiktok.com/@xjannetv", external: true }] },
+  Projekte: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2F8421c898a7de468283b88454a2878a27?format=webp&width=800&height=1200", label: "WAS ENTSTEHT", links: [{ label: "Minecraft SMP — bald mehr", href: "https://www.twitch.tv/xjannetv", external: true }] },
+  Stream: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2Fdb67860ef05d445daf98bb9eebb8a36f?format=webp&width=800&height=1200", label: "LIVE AUF TWITCH", links: [{ label: "xJanneTV", href: "https://www.twitch.tv/xjannetv", external: true }, { label: "Vibe with Janne", href: "https://www.twitch.tv/vibewithjanne", external: true }] },
+  Kunst: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2F173803265ac54437a1c3cbad6d006298?format=webp&width=800&height=1200", label: "VISUELLE WELTEN", links: [{ label: "Linktree öffnen", href: "https://linktr.ee/xjannetv", external: true }] },
+  Musik: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2Fd1bb8734c134498e9d5644135108cb61?format=webp&width=800&height=1200", label: "SOUNDS VON XJANNE", links: [{ label: "Linktree öffnen", href: "https://linktr.ee/xjannetv", external: true }] },
+  Arcanimals: { image: "https://cdn.builder.io/api/v1/image/assets%2F843c2c9147174e21a08386d68870f8b1%2Fef6cba0444bd416596d3192e9ba7745e?format=webp&width=800&height=1200", label: "COMING SOON", links: [] },
+};
+
+export function PrivacyPage() {
+  return <div className="site-shell"><Header /><main className="privacy-page"><div className="privacy-page-inner"><span className="eyebrow">XJANNE / DATENSCHUTZ</span><h1>Datenschutz</h1><p>Der Schutz deiner persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert dich über die Verarbeitung personenbezogener Daten beim Besuch dieser Website.</p><h2>Verantwortliche Stelle</h2><p>xJanne<br />E-Mail: <a href="mailto:jl.offiziell@gmail.com" className="privacy-link">jl.offiziell@gmail.com</a></p><h2>Hosting und Server-Logfiles</h2><p>Beim Aufruf dieser Website werden durch den Hosting-Anbieter technisch notwendige Daten in Server-Logfiles verarbeitet. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite und Browsertyp gehören. Die Verarbeitung erfolgt zur sicheren und stabilen Bereitstellung der Website.</p><h2>Externe Inhalte und Links</h2><p>Diese Website enthält Links zu externen Angeboten wie Twitch, YouTube, Instagram, TikTok und Discord. Beim Anklicken eines solchen Links gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p><h2>Deine Rechte</h2><p>Du hast im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch gegen die Verarbeitung deiner personenbezogenen Daten. Zur Ausübung deiner Rechte genügt eine Nachricht an die oben genannte E-Mail-Adresse.</p><p className="privacy-updated">Stand: August 2026</p><Link to="/" className="text-link">Zur Startseite <ArrowUpRight size={17} /></Link></div></main><Footer /></div>;
+}
+
 export function SectionPage({ title, subtitle }: { title: string; subtitle: string }) {
-  return <div className="site-shell"><Header /><main className="section-page"><div className="section-page-inner"><span className="eyebrow">XJANNE / {title.toUpperCase()}</span><h1>{title}</h1><p>{subtitle}</p><Link to="/" className="text-link">Zur Startseite <ArrowUpRight size={17} /></Link></div></main><Footer /></div>;
+  const content = sectionContent[title];
+  return <div className="site-shell"><Header /><main className="section-page"><div className="section-page-inner"><span className="eyebrow">XJANNE / {title.toUpperCase()}</span><h1>{title}</h1>{title !== "Arcanimals" && <p className="section-subtitle">{subtitle}</p>}<div className="section-content"><img src={content.image} alt="" /><div className="section-links"><span className="contact-label">{content.label}</span>{content.links.map((link) => <a key={link.href} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-link">{link.label} <ArrowUpRight size={17} /></a>)}</div></div><Link to="/" className="text-link">Zur Startseite <ArrowUpRight size={17} /></Link></div></main><Footer /></div>;
 }
